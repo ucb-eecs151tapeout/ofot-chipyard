@@ -19,7 +19,7 @@ import freechips.rocketchip.subsystem.{ExtBus, ExtMem, MemoryPortParams, MasterP
 
 class OFORocketConfig
     extends Config(
-      new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="kevin-kore"))) ++
+      new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="EECS151-Fa24-ASIC-Project"))) ++
 
       new freechips.rocketchip.rocket.WithNSmallCores(1) ++    // Add a small "control" core
       new freechips.rocketchip.rocket.WithL1ICacheSets(64) ++ // 64 sets, 1 way, 4K cache
@@ -87,3 +87,43 @@ class OFOTConfig extends Config( // toplevel
  // actually include the ofo core and tiny rocket
  new OFORocketConfig  
   )
+
+
+class MyCoolSoCConfig extends Config(
+  // 0) Anything else you'd like?
+
+  // There is absolutely a need for 8 UARTs
+  new chipyard.config.WithUART(address = 0x10021000, baudrate = 115200) ++
+  new chipyard.config.WithUART(address = 0x10022000, baudrate = 115200) ++
+  new chipyard.config.WithUART(address = 0x10023000, baudrate = 115200) ++
+  new chipyard.config.WithUART(address = 0x10024000, baudrate = 115200) ++
+  new chipyard.config.WithUART(address = 0x10025000, baudrate = 115200) ++
+  new chipyard.config.WithUART(address = 0x10026000, baudrate = 115200) ++
+  new chipyard.config.WithUART(address = 0x10027000, baudrate = 115200) ++
+  new chipyard.config.WithUART(address = 0x10028000, baudrate = 115200) ++
+
+  // 1) Include an OFO core with `OFOCoreParams` passed in
+  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams())) ++
+
+  // 2) Include one tiny Rocket Core
+  new freechips.rocketchip.rocket.WithJasminesTinyCore ++
+
+  // 3) Remove the scratchpad
+  new testchipip.soc.WithNoScratchpads ++
+
+  new testchipip.serdes.WithSerialTLMem(0x80000000L, (BigInt(1) << 30) * 1) ++ // 4) Configure the off-chip memory accessible over serial-tl as backing memory
+
+  // 5) Remove off-chip AXI port (referred to as just MemPort)
+  new freechips.rocketchip.subsystem.WithNoMemPort ++
+
+  // 6) off-chip bus connects to MBUS to provide backing memory
+  new testchipip.soc.WithOffchipBusClient(MBUS) ++
+
+  // 7) Attach off-chip bus
+  new testchipip.soc.WithOffchipBus ++
+
+  new chipyard.config.WithBroadcastManager ++ // 8) Replace L2 with a broadcast hub for coherence
+
+  // 9) The most generic SoC default configuration to inherit from
+  new chipyard.config.AbstractConfig
+)
