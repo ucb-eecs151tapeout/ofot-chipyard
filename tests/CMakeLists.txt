@@ -67,24 +67,9 @@ add_link_options(-T ${LINKER_SCRIPT})
 # Build
 #################################
 
+add_executable(rocket-ofo rocket_ofo_driver.c)
 add_executable(pwm pwm.c)
-add_executable(blkdev blkdev.c)
-add_executable(accum accum.c)
-add_executable(charcount charcount.c)
-add_executable(cpp-hello cpp-hello.cpp)
-add_executable(nic-loopback nic-loopback.c)
-add_executable(big-blkdev big-blkdev.c)
-add_executable(pingd pingd.c)
-add_executable(streaming-passthrough streaming-passthrough.c)
-add_executable(streaming-fir streaming-fir.c)
-add_executable(nvdla nvdla.c)
-add_executable(spiflashread spiflashread.c)
-add_executable(spiflashwrite spiflashwrite.c)
-add_executable(fft fft.c)
-add_executable(gcd gcd.c)
-add_executable(hello hello.c)
-add_executable(mt-hello mt-hello.c)
-add_executable(symmetric symmetric.c)
+
 
 #################################
 # Disassembly
@@ -105,24 +90,8 @@ function(add_dump_target target_name)
     add_dependencies(dump ${target_name}-dump)
 endfunction()
 
+add_dump_target(rocket-ofo)
 add_dump_target(pwm)
-add_dump_target(blkdev)
-add_dump_target(accum)
-add_dump_target(charcount)
-add_dump_target(cpp-hello)
-add_dump_target(nic-loopback)
-add_dump_target(big-blkdev)
-add_dump_target(pingd)
-add_dump_target(streaming-passthrough)
-add_dump_target(streaming-fir)
-add_dump_target(nvdla)
-add_dump_target(spiflashread)
-add_dump_target(spiflashwrite)
-add_dump_target(fft)
-add_dump_target(gcd)
-add_dump_target(hello)
-add_dump_target(mt-hello)
-add_dump_target(symmetric)
 
 
 # Add custom command to generate spiflash.img from spiflash.py

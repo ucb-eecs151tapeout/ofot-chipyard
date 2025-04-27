@@ -10,7 +10,7 @@ RDIR=$(git rev-parse --show-toplevel)
 # move to top-level
 cd $RDIR
 
-DRIVER_BIN=rocket_ofo_driver
+DRIVER_BIN=rocket-ofo
 OFO_BIN=median
 
 pushd tests
@@ -21,10 +21,10 @@ make
 ./build-for-ofo.sh ${OFO_BIN}
 popd
 
-SOC1_BIN=$PWD/tests/${DRIVER_BIN}.riscv
+SOC1_BIN=$PWD/tests/build/${DRIVER_BIN}.riscv
 SOC2_BIN=${1:-$PWD/tests/${OFO_BIN}.ofo.riscv}
 
-CFG=OFOTConfig
+CFG=MyCoolSoCConfig
 out_name=$(basename $SOC2_BIN)
 
 pushd sims/vcs

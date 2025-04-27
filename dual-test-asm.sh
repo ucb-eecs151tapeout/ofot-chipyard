@@ -2,7 +2,7 @@
 set -o pipefail
 #
 # run all the asm bmarks in dual-test 
-for file in $PWD/generators/ofo/src/main/resources/vsrc/cores/kevin-kore/tests/asm/*.elf; do
+for file in $PWD/generators/ofo/src/main/resources/vsrc/cores/EECS151-Fa24-ASIC-Project/tests/asm/*.elf; do
 
       echo "Running test: $file"
 

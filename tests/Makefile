@@ -25,11 +25,11 @@ CFLAGS  = -std=gnu99 -O2 -fno-common -fno-builtin-printf -Wall
 CFLAGS += $(ARCHFLAGS)
 LDFLAGS = -static
 
-include libgloss.mk
+#include libgloss.mk
 
-PROGRAMS = pwm blkdev accum charcount nic-loopback big-blkdev pingd \
+PROGRAMS = rocket_ofo_driver pwm blkdev accum charcount nic-loopback big-blkdev pingd \
            streaming-passthrough streaming-fir nvdla spiflashread spiflashwrite fft gcd \
-           hello mt-hello symmetric test_set_reset rocket_ofo_driver write_a_lot
+           hello mt-hello symmetric test_set_reset  write_a_lot
 
 
 .DEFAULT_GOAL := default

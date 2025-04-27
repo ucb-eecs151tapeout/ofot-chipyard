@@ -79,7 +79,7 @@ class ProvenOFOTConfig extends Config(
   // SoC harness
   new TemplateOFOTConfig ++
   // actually include the ofo core
-  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="kevin-kore"))) ++
+  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="EECS151-Fa24-ASIC-Project"))) ++
   // actually include the tiny rocket
   new TemplateOFORocketConfig
 )
@@ -92,8 +92,8 @@ class DualOFOTConfig extends Config(
   // SoC harness
   new TemplateOFOTConfig ++
   // actually include the ofo core
-  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="kevin-kore"), 
-    ofo.OneFiftyOneCoreParams(projectName="kevin-kore"))) ++
+  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="EECS151-Fa24-ASIC-Project"), 
+    ofo.OneFiftyOneCoreParams(projectName="EECS151-Fa24-ASIC-Project"))) ++
   // actually include the tiny rocket
   new TemplateOFORocketConfig
 )
@@ -102,7 +102,7 @@ class MultiOFOTConfig extends Config(
   // SoC harness
   new TemplateOFOTConfig ++
   // actually include the ofo core
-  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="kevin-kore"), 
+  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="EECS151-Fa24-ASIC-Project"), 
     ofo.OneFiftyOneCoreParams(projectName="fa23-mechanical-engineering-main"))) ++
   // actually include the tiny rocket
   new TemplateOFORocketConfig
