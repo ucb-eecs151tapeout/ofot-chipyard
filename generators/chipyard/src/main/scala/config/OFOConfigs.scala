@@ -15,7 +15,7 @@ import freechips.rocketchip.subsystem.{ExtBus, ExtMem, MemoryPortParams, MasterP
 // --------------
 
 class OFORawConfig extends Config(
-  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="kevin-kore"))) ++
+  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="my-151-asic-project"))) ++
   new freechips.rocketchip.subsystem.WithExtMemSize((1 << 30) * 1L) ++ // make mem big enough for multiple binaries
   new chipyard.config.AbstractConfig
 )
@@ -79,7 +79,7 @@ class ProvenOFOTConfig extends Config(
   // SoC harness
   new TemplateOFOTConfig ++
   // actually include the ofo core
-  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="kevin-kore"))) ++
+  // new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="my-151-asic-project"))) ++
   // actually include the tiny rocket
   new TemplateOFORocketConfig
 )
@@ -107,3 +107,45 @@ class MultiOFOTConfig extends Config(
   // actually include the tiny rocket
   new TemplateOFORocketConfig
 )
+
+
+  // ------------------------ MY CONFIG ------------------------
+
+  // 1) Where 
+  // 2) Where can I put eFPGA MMIO peripheral? 
+  // Generator?
+  class MyCoolChipConfig extends Config(
+    // Place the BootROM at a safe address (e.g., 0x20000) to clear the 0x80000000 conflict.
+    // new testchipip.boot.WithBootAddrReg(0x20000) ++
+
+    // 0) Anything else you'd like? 
+
+    // 1) Include an OFO core with `OFOCoreParams` passed in
+    // new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="my-151-asic-project"))) ++
+    new eFPGA MMIO peripheral
+
+    // 2) Include one tiny Rocket Core
+    // new freechips.rocketchip.rocket.With1TinyCore ++
+    new freechips.rocketchip.rocket.WithNSmallCores(1) ++
+
+    // 3) Remove the scratchpad
+    new testchipip.soc.WithNoScratchpads ++
+
+    // 4) Configure the off-chip memory accessible over serial-tl as backing memory
+    new testchipip.serdes.WithSerialTLMem(size = (1 << 30) * 1L) ++ 
+
+    // 5) Remove off-chip AXI port (referred to as just MemPort)
+    new freechips.rocketchip.subsystem.WithNoMemPort ++
+
+    // 6) off-chip bus connects to MBUS to provide backing memory
+    new testchipip.soc.WithOffchipBusClient(MBUS) ++ // offchip bus connects to MBUS, since the serial-tl needs to provide backing memory
+
+    // 7) Attach off-chip bus               
+    new testchipip.soc.WithOffchipBus ++
+
+    // 8) Replace L2 with a broadcast hub for coherence
+    new chipyard.config.WithBroadcastManager ++ 
+
+    // 9) The most generic SoC default configuration to inherit from
+    new chipyard.config.AbstractConfig
+  )
