@@ -25,7 +25,7 @@ CFLAGS  = -std=gnu99 -O2 -fno-common -fno-builtin-printf -Wall
 CFLAGS += $(ARCHFLAGS)
 LDFLAGS = -static
 
-include libgloss.mk
+# include libgloss.mk
 
 PROGRAMS = pwm blkdev accum charcount nic-loopback big-blkdev pingd \
            streaming-passthrough streaming-fir nvdla spiflashread spiflashwrite fft gcd \
@@ -33,7 +33,7 @@ PROGRAMS = pwm blkdev accum charcount nic-loopback big-blkdev pingd \
 
 
 .DEFAULT_GOAL := default
-
+# 
 
 #################################
 # Build
