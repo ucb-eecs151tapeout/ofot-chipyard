@@ -64,10 +64,13 @@ HELP_COMMANDS += \
 #########################################################################################
 include $(base_dir)/generators/cva6/cva6.mk
 include $(base_dir)/generators/ibex/ibex.mk
-include $(base_dir)/generators/ara/ara.mk
+-include $(base_dir)/generators/ara/ara.mk
 include $(base_dir)/generators/tracegen/tracegen.mk
 include $(base_dir)/generators/nvdla/nvdla.mk
 include $(base_dir)/tools/torture.mk
+# Optional generator make fragments should not fail build if absent
+# Wildcard include for standardized per-generator make fragments
+-include $(wildcard $(base_dir)/generators/*/chipyard.mk)
 
 #########################################################################################
 # Prerequisite lists
