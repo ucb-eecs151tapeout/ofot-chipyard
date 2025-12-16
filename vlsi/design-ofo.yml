@@ -183,5 +183,5 @@ design.def.hv_routing: ofo-hv-routing.def
 
 vlsi.inputs.dont_use_mode: append
 vlsi.inputs.dont_use_list_meta: append
-vlsi.inputs.dont_use_list:
-  - sky130_fd_sc_hvl__*
+# vlsi.inputs.dont_use_list:
+#   - sky130_fd_sc_hvl__*

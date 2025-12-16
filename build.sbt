@@ -409,10 +409,9 @@ lazy val firechip = (project in file("generators/firechip/chip"))
   )
   .settings(scalaTestSettings)
 
-/*
 lazy val ofo = (project in file("generators/ofo"))
   .dependsOn(rocketchip)
     .settings(libraryDependencies ++= rocketLibDeps.value)
       .settings(chiselSettings)
         .settings(commonSettings)
-*/
+

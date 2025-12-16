@@ -122,7 +122,7 @@ class MultiOFOTConfig extends Config(
 
     // 1) Include an OFO core with `OFOCoreParams` passed in
     // new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="my-151-asic-project"))) ++
-    new eFPGA MMIO peripheral
+    // new eFPGA MMIO peripheral
 
     // 2) Include one tiny Rocket Core
     // new freechips.rocketchip.rocket.With1TinyCore ++
