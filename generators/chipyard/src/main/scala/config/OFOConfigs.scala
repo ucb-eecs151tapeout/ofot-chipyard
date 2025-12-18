@@ -79,7 +79,7 @@ class ProvenOFOTConfig extends Config(
   // SoC harness
   new TemplateOFOTConfig ++
   // actually include the ofo core
-  // new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="my-151-asic-project"))) ++
+  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="my-151-asic-project"))) ++
   // actually include the tiny rocket
   new TemplateOFORocketConfig
 )

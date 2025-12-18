@@ -87,7 +87,9 @@ def process_helper(in_fname, out_f, inc_dirs, replaced_includes):
         # search for include and replace
         inc_file_name = find_include(match.group(1), inc_dirs)
         replaced_includes.add(match.group(1))
+        out_f.write("\n")
         process_helper(inc_file_name, out_f, inc_dirs, replaced_includes)
+        out_f.write("\n")
 
 
 def process(in_fname, out_fname, inc_dirs=None):

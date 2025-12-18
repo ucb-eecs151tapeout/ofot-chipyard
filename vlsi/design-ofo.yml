@@ -101,70 +101,70 @@ vlsi.inputs:
       y: 3076
       orientation: my90
 
-#     - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram0"
-#       type: hardmacro
-#       x: 1812.51
-#       y: 2357.62
-#       orientation: r270
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram0"
+      type: hardmacro
+      x: 1812.51
+      y: 2357.62
+      orientation: r270
 
-#     - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/meta_sram"
-#       type: hardmacro
-#       x: 2457.535
-#       y: 3170.31
-#       orientation: r270
-#     - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/meta_sram"
-#       type: hardmacro
-#       x: 1935.21
-#       y: 3070.31
-#       orientation: r270
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/meta_sram"
+      type: hardmacro
+      x: 2457.535
+      y: 3170.31
+      orientation: r270
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/meta_sram"
+      type: hardmacro
+      x: 1935.21
+      y: 3070.31
+      orientation: r270
 
-#     - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram1"
-#       type: hardmacro
-#       x: 1812.51
-#       y: 1794.895
-#       orientation: r270
-
-
-#     - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram2"
-#       type: hardmacro
-#       x: 1812.51
-#       y: 1222.47
-#       orientation: r270
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram1"
+      type: hardmacro
+      x: 1812.51
+      y: 1794.895
+      orientation: r270
 
 
-#     - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram3"
-#       type: hardmacro
-#       x: 1812.51
-#       y: 659.745
-#       orientation: r270
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram2"
+      type: hardmacro
+      x: 1812.51
+      y: 1222.47
+      orientation: r270
 
 
-#     - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram0"
-#       type: hardmacro
-#       x: 2457.535
-#       y: 2457.62
-#       orientation: r270
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram3"
+      type: hardmacro
+      x: 1812.51
+      y: 659.745
+      orientation: r270
 
 
-#     - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram1"
-#       type: hardmacro
-#       x: 2457.535
-#       y: 1894.895
-#       orientation: r270
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram0"
+      type: hardmacro
+      x: 2457.535
+      y: 2457.62
+      orientation: r270
 
 
-#     - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram2"
-#       type: hardmacro
-#       x: 2457.535
-#       y: 1322.47
-#       orientation: r270
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram1"
+      type: hardmacro
+      x: 2457.535
+      y: 1894.895
+      orientation: r270
 
 
-#     - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram3"
-#       type: hardmacro
-#       x: 2457.535
-#       y: 759.745
-#       orientation: r270
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram2"
+      type: hardmacro
+      x: 2457.535
+      y: 1322.47
+      orientation: r270
+
+
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram3"
+      type: hardmacro
+      x: 2457.535
+      y: 759.745
+      orientation: r270
 
 
 # for the por
@@ -183,5 +183,5 @@ design.def.hv_routing: ofo-hv-routing.def
 
 vlsi.inputs.dont_use_mode: append
 vlsi.inputs.dont_use_list_meta: append
-# vlsi.inputs.dont_use_list:
-#   - sky130_fd_sc_hvl__*
+vlsi.inputs.dont_use_list:  # KeyError: 'vlsi.inputs.dont_use_list' if I don't uncomment this line
+  - sky130_fd_sc_hvl__*
