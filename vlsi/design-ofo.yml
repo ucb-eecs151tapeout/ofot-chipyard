@@ -101,7 +101,7 @@ vlsi.inputs:
       y: 3076
       orientation: my90
 
-    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram_data_gen_block[0]/sram_data"
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram_data_gen_block_0_/sram_data"
       type: hardmacro
       x: 1812.51
       y: 2357.62
@@ -118,49 +118,49 @@ vlsi.inputs:
       y: 3070.31
       orientation: r270
 
-    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram_data_gen_block[1]/sram_data"
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram_data_gen_block_1_/sram_data"
       type: hardmacro
       x: 1812.51
       y: 1794.895
       orientation: r270
 
 
-    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram_data_gen_block[2]/sram_data"
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram_data_gen_block_2_/sram_data"
       type: hardmacro
       x: 1812.51
       y: 1222.47
       orientation: r270
 
 
-    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram_data_gen_block[3]/sram_data"
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/dcache/sram_data_gen_block_3_/sram_data"
       type: hardmacro
       x: 1812.51
       y: 659.745
       orientation: r270
 
 
-    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram_data_gen_block[0]/sram_data"
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram_data_gen_block_0_/sram_data"
       type: hardmacro
       x: 2457.535
       y: 2457.62
       orientation: r270
 
 
-    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram_data_gen_block[1]/sram_data"
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram_data_gen_block_1_/sram_data"
       type: hardmacro
       x: 2457.535
       y: 1894.895
       orientation: r270
 
 
-    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram_data_gen_block[2]/sram_data"
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram_data_gen_block_2_/sram_data"
       type: hardmacro
       x: 2457.535
       y: 1322.47
       orientation: r270
 
 
-    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram_data_gen_block[3]]/sram_data"
+    - path: "ChipTop/system/tile_prci_domain_1/element_reset_domain_shadow_council_core/core/mem/icache/sram_data_gen_block_3_/sram_data"
       type: hardmacro
       x: 2457.535
       y: 759.745
