@@ -84,6 +84,25 @@ class ProvenOFOTConfig extends Config(
   new TemplateOFORocketConfig
 )
 
+class ProvenOFOTSimConfig extends Config(
+  new chipyard.config.WithBroadcastManager ++
+  new testchipip.soc.WithNoScratchpads ++
+
+  new testchipip.serdes.WithSerialTLMem(size = (1 << 30) * 1L) ++
+
+  new freechips.rocketchip.subsystem.WithNoMemPort ++
+  new testchipip.soc.WithOffchipBusClient(MBUS) ++
+  new testchipip.soc.WithOffchipBus ++
+
+  new ofo.WithOFOCores(Seq(ofo.OneFiftyOneCoreParams(projectName="my-151-asic-project"))) ++
+  new TemplateOFORocketConfig
+
+  // new chipyard.config.WithNoMemory ++ // to fix overlapping port address error
+
+  // new chipyard.config.AbstractConfig
+)
+
+
 // --------------
 // More experimental OFO Configs
 // --------------
